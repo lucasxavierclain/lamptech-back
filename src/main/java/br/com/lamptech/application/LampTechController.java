@@ -7,15 +7,13 @@ import br.com.lamptech.infrastructure.entity.ListAccounts;
 import br.com.lamptech.infrastructure.entity.TransactionsAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/lamptech")
+@CrossOrigin(origins="*")
 public class LampTechController {
 
     @Autowired
@@ -36,7 +34,7 @@ public class LampTechController {
         return ResponseEntity.ok().body(service.getBalanceAccount(customerId, organizationid, accountId));
     }
 
-    @GetMapping("/transactions-account")
+    @PostMapping("/transactions-account")
     public ResponseEntity<List<TransactionsAccount>> transactionsAccount(@RequestHeader("customerId") String customerId,
                                                                          @RequestHeader("organizationid") String organizationid,
                                                                          @RequestHeader("accountId") String accountId) {
@@ -45,9 +43,8 @@ public class LampTechController {
     }
 
 
-    @GetMapping("/user-profile")
-    public ResponseEntity<ProfileAnalyse> getUserProfile(@RequestHeader("customerId") String customerId,
-                                                         @RequestHeader("organizationid") String organizationid) {
+    @PostMapping("/user-profile")
+    public ResponseEntity<ProfileAnalyse> getUserProfile( @RequestHeader("organizationid") String organizationid,@RequestHeader("customerId") String customerId) {
 
         return ResponseEntity.ok().body(service.getUserProfile(customerId, organizationid));
     }
