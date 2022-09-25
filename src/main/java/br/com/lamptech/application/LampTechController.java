@@ -1,5 +1,6 @@
 package br.com.lamptech.application;
 
+import br.com.lamptech.application.dto.ProfileAnalyse;
 import br.com.lamptech.domain.service.LampTechService;
 import br.com.lamptech.infrastructure.entity.AccountBalance;
 import br.com.lamptech.infrastructure.entity.ListAccounts;
@@ -22,33 +23,34 @@ public class LampTechController {
 
     @GetMapping("/account-list")
     public ResponseEntity<ListAccounts> getAccountList(@RequestHeader("customerId") String customerId,
-                                                      @RequestHeader("organizationid") String organizationid){
+                                                       @RequestHeader("organizationid") String organizationid) {
 
         return ResponseEntity.ok().body(service.getAccountList(customerId, organizationid));
     }
 
     @GetMapping("/balance-account")
     public ResponseEntity<AccountBalance> balanceAccount(@RequestHeader("customerId") String customerId,
-                                                        @RequestHeader("organizationid") String organizationid,
-                                                        @RequestHeader("accountId") String  accountId){
+                                                         @RequestHeader("organizationid") String organizationid,
+                                                         @RequestHeader("accountId") String accountId) {
 
         return ResponseEntity.ok().body(service.getBalanceAccount(customerId, organizationid, accountId));
     }
 
     @GetMapping("/transactions-account")
     public ResponseEntity<List<TransactionsAccount>> transactionsAccount(@RequestHeader("customerId") String customerId,
-                                                         @RequestHeader("organizationid") String organizationid,
-                                                         @RequestHeader("accountId") String  accountId){
-
-        return ResponseEntity.ok().body(service.getTransactionsAccount(customerId, organizationid, accountId));
-    }
-
-
-    @GetMapping("/transactions-account")
-    public ResponseEntity<List<TransactionsAccount>> getUserProfile(@RequestHeader("customerId") String customerId,
                                                                          @RequestHeader("organizationid") String organizationid,
-                                                                         @RequestHeader("accountId") String  accountId){
+                                                                         @RequestHeader("accountId") String accountId) {
 
         return ResponseEntity.ok().body(service.getTransactionsAccount(customerId, organizationid, accountId));
     }
+
+
+    @GetMapping("/user-profile")
+    public ResponseEntity<ProfileAnalyse> getUserProfile(@RequestHeader("customerId") String customerId,
+                                                         @RequestHeader("organizationid") String organizationid) {
+
+        return ResponseEntity.ok().body(service.getUserProfile(customerId, organizationid));
+    }
+
+
 }
