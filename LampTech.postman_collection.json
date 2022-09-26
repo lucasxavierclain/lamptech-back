@@ -12,12 +12,12 @@
 				"header": [
 					{
 						"key": "customerId",
-						"value": "147.591.832-30",
+						"value": "134.497.564-76",
 						"type": "default"
 					},
 					{
 						"key": "organizationId",
-						"value": "BANCO DO BRASIL",
+						"value": "btg",
 						"type": "default"
 					}
 				],
@@ -42,14 +42,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "accountId",
-						"value": "78e99753-0b81-4b7c-9bce-9079bc941f31",
-						"type": "default",
-						"disabled": true
-					},
-					{
 						"key": "customerId",
-						"value": "427.282.572-59",
+						"value": "134.497.564-76",
 						"type": "default"
 					},
 					{
@@ -59,7 +53,7 @@
 					},
 					{
 						"key": "accountId",
-						"value": "78e99753-0b81-4b7c-9bce-9079bc941f31",
+						"value": "0cb319e5-3bcf-4b67-a2d3-45ecc6c60305",
 						"type": "default"
 					}
 				],
@@ -96,17 +90,17 @@
 				"header": [
 					{
 						"key": "accountId",
-						"value": "997ca113-9c68-4108-ab8a-8bfb766b5f24",
+						"value": "0cb319e5-3bcf-4b67-a2d3-45ecc6c60305",
 						"type": "default"
 					},
 					{
 						"key": "customerId",
-						"value": "147.591.832-30",
+						"value": "134.497.564-76",
 						"type": "default"
 					},
 					{
 						"key": "organizationId",
-						"value": "BANCO DO BRASIL",
+						"value": "btg",
 						"type": "default"
 					}
 				],
