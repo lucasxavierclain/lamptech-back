@@ -1,6 +1,6 @@
 package br.com.lamptech.domain.exceptions;
 
-import br.com.lamptech.domain.erros.CodeErros;
+import br.com.lamptech.domain.enums.CodeErros;
 import lombok.Getter;
 import lombok.Setter;
 

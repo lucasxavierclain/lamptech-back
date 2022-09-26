@@ -1,4 +1,4 @@
-package br.com.lamptech.domain.erros;
+package br.com.lamptech.domain.enums;
 
 public enum CodeErros {
 

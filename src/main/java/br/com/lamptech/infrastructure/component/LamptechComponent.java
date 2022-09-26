@@ -1,6 +1,6 @@
 package br.com.lamptech.infrastructure.component;
 
-import br.com.lamptech.application.dto.ProfileAnalyse;
+import br.com.lamptech.application.dto.ProfileAnalyseDTO;
 import br.com.lamptech.infrastructure.entity.AccountBalance;
 import br.com.lamptech.infrastructure.entity.ListAccounts;
 import br.com.lamptech.infrastructure.entity.TransactionsAccount;
@@ -14,5 +14,5 @@ public interface LamptechComponent {
     AccountBalance getBalanceAccount(String customerId, String organizationid, String accountId);
 
     List<TransactionsAccount> getTransactionsAccount(String customerId, String organizationid, String accountId);
-    ProfileAnalyse getProfileAnalyse(AccountBalance balanceAccount,List<TransactionsAccount> transactionsAccount);
+    ProfileAnalyseDTO getProfileAnalyse(AccountBalance balanceAccount, List<TransactionsAccount> transactionsAccount);
 }

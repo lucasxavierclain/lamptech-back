@@ -1,6 +1,6 @@
 package br.com.lamptech.application.handler;
 
-import br.com.lamptech.domain.erros.CodeErros;
+import br.com.lamptech.domain.enums.CodeErros;
 import br.com.lamptech.domain.exceptions.GlobalException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

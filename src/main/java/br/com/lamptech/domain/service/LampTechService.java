@@ -1,11 +1,10 @@
 package br.com.lamptech.domain.service;
 
-import br.com.lamptech.application.dto.ProfileAnalyse;
-import br.com.lamptech.domain.OrganizationInfos;
-import br.com.lamptech.domain.erros.CodeErros;
+import br.com.lamptech.application.dto.ProfileAnalyseDTO;
+import br.com.lamptech.domain.enums.OrganizationInfos;
+import br.com.lamptech.domain.enums.CodeErros;
 import br.com.lamptech.domain.exceptions.GlobalException;
 import br.com.lamptech.infrastructure.component.LamptechComponent;
-import br.com.lamptech.infrastructure.component.impl.LamptechComponentImpl;
 import br.com.lamptech.infrastructure.entity.AccountBalance;
 import br.com.lamptech.infrastructure.entity.ListAccounts;
 import br.com.lamptech.infrastructure.entity.TransactionsAccount;
@@ -76,9 +75,9 @@ public class LampTechService {
         return transactionsAccount;
     }
 
-    public ProfileAnalyse getUserProfile(String customerId, String organizationid) {
+    public ProfileAnalyseDTO getUserProfile(String customerId, String organizationid) {
 
-        ProfileAnalyse profileAnalyse = null;
+        ProfileAnalyseDTO profileAnalyse = null;
         try {
 
             ListAccounts account = getAccountList(customerId, organizationid);

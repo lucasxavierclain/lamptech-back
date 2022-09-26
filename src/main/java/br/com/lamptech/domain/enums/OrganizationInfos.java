@@ -1,12 +1,4 @@
-package br.com.lamptech.domain;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.Arrays;
-import java.util.stream.Stream;
-
+package br.com.lamptech.domain.enums;
 
 public enum OrganizationInfos {
 

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProfileAnalyse {
+public class ProfileAnalyseDTO {
 
     private String accountId;
     private String customerId;
@@ -15,7 +15,7 @@ public class ProfileAnalyse {
     private String amount;
     private Boolean limitApproved;
 
-    public ProfileAnalyse(AccountBalance balanceAccount, Double totalTransactions){
+    public ProfileAnalyseDTO(AccountBalance balanceAccount, Double totalTransactions){
         this.accountId=balanceAccount.getAccountId();
         this.customerId=balanceAccount.getCustomerId();
         this.organizationName=balanceAccount.getOrganizationName();

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com</groupId>
 	<artifactId>lamptech</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>lamptech</name>
 	<description>Back-end lamptech</description>
 	<properties>
@@ -42,6 +42,12 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.8.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

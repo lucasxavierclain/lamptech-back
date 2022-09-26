@@ -1,12 +1,10 @@
 package br.com.lamptech.infrastructure.component.impl;
 
-import br.com.lamptech.application.dto.ProfileAnalyse;
-import br.com.lamptech.domain.OrganizationInfos;
-import br.com.lamptech.domain.erros.CodeErros;
+import br.com.lamptech.application.dto.ProfileAnalyseDTO;
+import br.com.lamptech.domain.enums.CodeErros;
 import br.com.lamptech.domain.exceptions.GlobalException;
 import br.com.lamptech.infrastructure.component.LamptechComponent;
 import br.com.lamptech.infrastructure.entity.*;
-import br.com.lamptech.infrastructure.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,8 +12,6 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
@@ -113,7 +109,7 @@ public class LamptechComponentImpl implements LamptechComponent {
 
 
     @Override
-    public ProfileAnalyse getProfileAnalyse(AccountBalance balanceAccount, List<TransactionsAccount> transactionsAccount) {
+    public ProfileAnalyseDTO getProfileAnalyse(AccountBalance balanceAccount, List<TransactionsAccount> transactionsAccount) {
 
         if (balanceAccount.getAvailableAmount() == null || miniLimit > balanceAccount.getAvailableAmount()) {
 
@@ -131,7 +127,7 @@ public class LamptechComponentImpl implements LamptechComponent {
 
         });
 
-        ProfileAnalyse profileAnalyse = new ProfileAnalyse(balanceAccount, totalAccount.get());
+        ProfileAnalyseDTO profileAnalyse = new ProfileAnalyseDTO(balanceAccount, totalAccount.get());
 
         return profileAnalyse;
     }
